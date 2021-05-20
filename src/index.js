@@ -19,19 +19,18 @@ const refs = {
     stopBtn: document.querySelector('button[data-action="stop"]'),
     body: document.querySelector('body'),
 }
-
 let intervalId = 'null';
 
 refs.startBtn.addEventListener('click', () => {
+  refs.startBtn.setAttribute('disabled', true)
     intervalId = setInterval(() => {
-    if (intervalId) {
-        refs.startBtn.setAttribute('disabled', true);
-    }
      refs.body.style.background = colors[randomIntegerFromInterval(0, colors.length - 1)];
     }, 500)
+  c
 })
 
-refs.stopBtn.addEventListener('click', () => {
-    clearInterval(intervalId)
-    refs.startBtn.removeAttribute('disabled')
+refs.stopBtn.addEventListener('click', () => { 
+  clearInterval(intervalId)
+  refs.startBtn.removeAttribute('disabled')
 })
+
